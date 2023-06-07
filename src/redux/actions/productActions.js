@@ -6,7 +6,7 @@ export const setProducts = (products) => {
         payload: products,
     };
 };
-
+``
 
 export const selectedProduct = (product) => {
     return {
