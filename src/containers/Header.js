@@ -6,7 +6,6 @@ const Header = () => {
             <div className="ui container center">
                 <h2>OnlineStore</h2>
             </div>
-
         </div>
     )
 }

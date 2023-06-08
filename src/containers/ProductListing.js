@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
+import ProductComponents from './ProductComponents';
+import axios from 'axios';
 
 const ProductListing = () => {
     const products = useSelector((state) => state);
+
+    const fetchProducts = async () => {
+        const response = await axios
+            .get("https://fakestoreapi.com/products")
+            .catch((err) => {
+                console.log("Err", err)
+            });
+        console.log(response)
+    }
     console.log(products);
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
     return (
         <div className="ui fixed menu">
             <div className="ui container center">
-                <h2>ProductListing</h2>
+                <ProductComponents />
             </div>
 
         </div>
