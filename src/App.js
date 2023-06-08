@@ -1,21 +1,22 @@
-import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Header from './containers/Header'
-import ProductListing from './containers/ProductListing';
-import ProductDetails from './containers/ProductDetails';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import ProductListing from "./containers/ProductListing";
+import Header from "./containers/Header";
+import "./App.css";
+import ProductDetails from "./containers/ProductDetails";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Router>
-        <Header />
+      <Header />
         <Routes>
-          <Route path="/" exact component={ProductListing} />
-          <Route path="/product/:productId" component={ProductDetails} />
-          <Route>404 Not Found!</Route>
+
+          <Route path="/" exact Component={ProductListing} />
+          <Route path="/product/:productId" Component={ProductDetails} />
+          <Route path="*">404 Not Found!</Route>
         </Routes>
       </Router>
-
     </div>
   );
 }
